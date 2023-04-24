@@ -18,16 +18,18 @@
         <section class = "main">
             <div class="main-container">
                 <div class = "column-middle">
-                    <h1 class="form__title">Welcome (User name)</h1>
-                    <a href="budget_graph.html">
-                        <button class="form__button" type="submit"><b>Budget Graph</b></button>
-                    </a>
-                    <a href="Link_bank.html">
-                        <button class="form__button" type="submit"><b>Link Bank Account</b></button>
-                    </a>
-                    <a href="Add_member.html">
-                        <button class="form__button" type="submit"><b>Add Faimly memeber</b></button>
-                    </a>
+                    <div class="form__input-group">
+                        <h1>Enter user Id you would like to invite</h1>
+                        <input type="memberId" class="form__input" autofocus placeholder="MemberId">
+                        <div class="form__input-error-message"></div>
+                    </div>
+                    <div class="form__input-group">
+                        <h1>Confirm memeber ID</h1>
+                        <input type="MemberId" class="form__input" autofocus placeholder="memberId">
+                        <div class="form__input-error-message"></div>
+                    </div>
+
+                    
                 </div>
         </section>
     </div>
