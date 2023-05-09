@@ -14,7 +14,9 @@ npm install axios
 
 Route '/prompts/promptID'
 
+```
 const response = await axios.get(`http://localhost:5213/prompts/${promptID}`); //reads into response
+```
 
 Breakdonw of the request
 
