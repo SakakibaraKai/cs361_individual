@@ -7,6 +7,26 @@ npm install express
 
 npm install axios
 
+**Include new files**
+
+this programs microservice is reading form a json file named prompts.json please make sure this exists in same directory as microservice
+
+format for prompts.json
+
+```
+[
+    {
+        "id": 1,
+        "title": "Title example 1",
+        "prompt": "This is a test prompt for prompt 1"
+    },
+    {
+        "id": 2,
+        "title": "Title example 2",
+        "prompt": "I am in a class called cs361 and my name is"
+    }
+]
+```
 
 **How to Request Data**
 
@@ -31,6 +51,26 @@ http://localhost:5213/prompts/${promptID}
 - This is run a local host the number 5213 is only tempary and will be changed to your port of choice
 - ${promptID} means that you will define a value promptID and set it to the desired id and it will pass that id to the reqested id this means that if you for example did promptID = 1 you would look like http://localhost:5213/prompts/1
 
+because of this I have coded a function that you can use to get that data it only prints to consle for now but it maybe helpfull
+
+```
+const axios = require('axios');
+
+
+async function getPromptId(promptID) {
+    try {
+        const response = await axios.get(`http://localhost:5213/prompts/${promptID}`); //reads into response
+        const prompt = response.data; //get prompt
+        console.log('Prompt:', prompt); //get log the prompt 
+    }
+    catch (error) {
+        console.error('Error', error.message);
+    }
+}
+getPromptId(1); // calling 1
+getPromptId(2);
+getPromptId(3);
+```
 
 **How to Recive Data**
 the microserve returns a json below is an example return form microservice
@@ -50,4 +90,4 @@ const prompt = response.data;
 
 bellow the request of data
 
-we recomend adding a check if there is a error or not
+![image](https://user-images.githubusercontent.com/115040382/236994947-3cdc8521-6ac3-4e45-a861-7826c7edf2b6.png)
