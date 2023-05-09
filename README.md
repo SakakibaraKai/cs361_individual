@@ -20,7 +20,6 @@ http://localhost:5213/prompts/${promptID}
 - ${promptID} means that you will define a value promptID and set it to the desired id and it will pass that id to the reqested id
 this means that if you for example did promptID = 1 you would look like http://localhost:5213/prompts/1
 
-
 How to Recive Data
 the microserve returns a json below is an example return form microservice
 
