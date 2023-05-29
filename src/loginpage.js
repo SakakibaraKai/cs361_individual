@@ -1,3 +1,80 @@
+function makeHttpRequest(url, method, data) {
+    return fetch(url, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .catch(error => console.error('Error:', error));
+}
+  
+  function setFormMessage(formElement, type, message) {
+    const messageElement = formElement.querySelector(".form__message");
+  
+    messageElement.textContent = message;
+    messageElement.classList.remove("form__message--success", "form__message--error");
+  
+    if (type === "success") {
+      messageElement.classList.add("form__message--success");
+    } else if (type === "error") {
+      messageElement.classList.add("form__message--error");
+    }
+  }
+  
+  function setInputError(inputElement, message) {
+    inputElement.classList.add("form__input--error");
+    const errorElement = inputElement.parentElement.querySelector(".form__input-error-message");
+    errorElement.textContent = message;
+    errorElement.style.display = "block";
+  }
+  
+  function clearInputError(inputElement) {
+    inputElement.classList.remove("form__input--error");
+    const errorElement = inputElement.parentElement.querySelector(".form__input-error-message");
+    errorElement.textContent = "";
+    errorElement.style.display = "none";
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.querySelector("#login");
+    const createAccountForm = document.querySelector("#createAccount");
+  
+    loginForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const usernameInput = loginForm.querySelector("input[type='text']");
+        const passwordInput = loginForm.querySelector("input[type='password']");
+
+        const loginData = {
+            username: usernameInput.value,
+            password: passwordInput.value,
+        };
+        console.log(loginData);
+  
+      makeHttpRequest('http://localhost:5000/validate', 'POST', loginData)
+        .then(response => {
+          console.log(response)
+          console.log(loginData)
+          if (response === true) {
+            // Successful login
+            setFormMessage(loginForm, "success", "Login successful");
+          } else {
+            // Invalid credentials
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          setFormMessage(loginForm, "error", "An error occurred during login");
+        });
+    });
+  });
+  
+  
+  
+/*
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -52,3 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+*/
