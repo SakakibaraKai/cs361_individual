@@ -14,10 +14,20 @@ npm install express
 
 ## **Include new files**
 
-this programs microservice is reading form a json file named prompts.json please make sure this exists in same directory as microservice
+This programs microservice is reading form a json file named prompts.json please make sure this exists in same directory as microservice
 
 format for prompts.json
 
+variables in each
+id
+    Type: (int)
+    Use: Holds the unique id for each prompt
+title
+    Type: (string)
+    Use: Holds the title for the prompt
+prompt
+    Type: (string)
+    Use: Holds the prompt
 ```
 [
     {
