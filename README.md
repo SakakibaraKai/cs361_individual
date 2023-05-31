@@ -19,12 +19,15 @@ This programs microservice is reading form a json file named prompts.json please
 format for prompts.json
 
 variables in each
+
 id
     Type: (int)
     Use: Holds the unique id for each prompt
+    
 title
     Type: (string)
     Use: Holds the title for the prompt
+    
 prompt
     Type: (string)
     Use: Holds the prompt
