@@ -1,7 +1,7 @@
 # Microservice instructions
 5/8/2023
 
-**Downloads**
+## **Downloads**
 
 Fallowing is the code to download express the service that the microservice usees to run.
 
@@ -10,7 +10,7 @@ npm install express
 ```
 
 
-**Include new files**
+## **Include new files**
 
 this programs microservice is reading form a json file named prompts.json please make sure this exists in same directory as microservice
 
@@ -31,7 +31,7 @@ format for prompts.json
 ]
 ```
 
-**How to Request Data**
+## **How to Request Data**
 
 -For this we will be using http gets bellow is an example on how to request a data
 
@@ -75,7 +75,7 @@ getPromptId(2);
 getPromptId(3);
 ```
 
-**How to Recive Data**
+## **How to Recive Data**
 the microserve returns a json below is an example return form microservice
 
 ```
