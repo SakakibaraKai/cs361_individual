@@ -20,17 +20,17 @@ format for prompts.json
 
 variables in each
 
-id
+1. id
 -   Type: (int)
 -   Use: Holds the unique id for each prompt
     
-title
+2. title
 -   Type: (string)
 -   Use: Holds the title for the prompt
     
-> prompt
-    - Type: (string)
-    - Use: Holds the prompt
+3. prompt
+-   Type: (string)
+-   Use: Holds the prompt
 ```
 [
     {
