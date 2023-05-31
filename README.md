@@ -18,7 +18,7 @@ This programs microservice is reading form a json file named prompts.json please
 
 format for prompts.json
 
-variables in each
+variables in each block of the json file.
 
 1. id
 -   Type: (int)
@@ -31,6 +31,8 @@ variables in each
 3. prompt
 -   Type: (string)
 -   Use: Holds the prompt
+
+Example of json file
 ```
 [
     {
